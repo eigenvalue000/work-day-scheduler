@@ -35,6 +35,14 @@ $(function() {
     // displaying the user's saved task even if the page is reloaded.
     $('#hour08 .description').val(localStorage.getItem('hour08'));
 
+    // This function gets the current hour. This function returns a number
+    // that will be used to check if a task is past the due date.
+    function trackHour() {
+        var currentHour = moment().hour();
+        return currentHour;
+    }
+
+    console.log(trackHour());
 });
 
 
