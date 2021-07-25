@@ -41,6 +41,7 @@ body {
     color: #000000;
     border-top: 1px dashed #000000;
     border-bottom: 1px dashed #000000;
+    border-left: 1px dashed #000000;
   }
   
   .past {
