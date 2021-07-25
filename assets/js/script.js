@@ -59,7 +59,6 @@ $(function() {
             if (timeBlockNum < hourNum) {
                 // If the timeBlockNum is less than the current
                 // hour hourNum, then color the time block grey.
-                console.log('timeBlockNum' + timeBlockNum.toString() + '<' + 'hourNum' + hourNum.toString());
                 // Color the time block grey by adding the 'past' class
                 $(this).addClass('past');
                 // Clean up other time block colorings
@@ -69,7 +68,6 @@ $(function() {
             } else if (timeBlockNum === hourNum) {
                 // If the timeBlockNum is equal to the current
                 // hour hourNum, then color the time block red.
-                console.log('timeBlockNum' + timeBlockNum.toString() + '=' + 'hourNum' + hourNum.toString());
                 // Color the time block red by adding the 'present' class
                 $(this).addClass('present');
                 // Clean up other time block colorings
@@ -78,7 +76,6 @@ $(function() {
             } else {
                 // If the timeBlockNum is greater than the current
                 // hour hourNum, then color the time block green.
-                console.log('timeBlockNum' + timeBlockNum.toString() + '>' + 'hourNum' + hourNum.toString());
                 // Color the time block green by adding the 'future' class
                 $(this).addClass('future');
                 //Clean up other time block colorings
