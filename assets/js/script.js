@@ -44,14 +44,31 @@ $(function() {
 
     function compareHour(hourNum) {
         $('.time-block').each(function() {
+            // First, get the corresponding time block element.
             var timeBlockEl = $(this);
-            
+            // Next, choose the 0th element of the timeBlockEl object. Then
+            // choose the 0th child of the timeBlockEl which is the div tag
+            // with class="hour". Get the text from within that tag's body
+            // and trim the whitespace and split the string by the ':' delimiter.
+            // Take the 0th element of the resulting array, which will be the
+            // string version of the current hour. Use parseInt to turn this resulting
+            // string into a useable number for comparison.
             var timeBlockNum = parseInt(timeBlockEl[0].children[0].textContent.trim().split(':')[0]);
-            console.log(timeBlockNum)
+            
+            if (timeBlockNum < hourNum) {
+                console.log('timeBlockNum' + timeBlockNum.toString() + '<' + 'hourNum' + hourNum.toString());
+                
+            } else if (timeBlockNum === hourNum) {
+                console.log('timeBlockNum' + timeBlockNum.toString() + '=' + 'hourNum' + hourNum.toString());
+            } else {
+                console.log('timeBlockNum' + timeBlockNum.toString() + '>' + 'hourNum' + hourNum.toString());
+                
+            }
         });
     }
-    compareHour(0);
-    console.log(trackHour());
+   
+    compareHour(trackHour());
+    
 });
 
 
