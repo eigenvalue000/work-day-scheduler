@@ -13,7 +13,7 @@ $(function() {
 
     // This uses the on function from jQuery to make the saveButton
     // execute the anonymous function on the click of the button
-    $('#saveButton').on('click', function() {
+    $('.saveBtn').on('click', function() {
         // taskTime is assigned the value of the id that is
         // the parent of the saveButton, which will be the id
         // of the container, ie id="hourXX" where XX will be
@@ -34,7 +34,7 @@ $(function() {
     // description in the HTML. This results in the page always
     // displaying the user's saved task even if the page is reloaded.
     $('#hour08 .description').val(localStorage.getItem('hour08'));
-
+    $('#hour09 .description').val(localStorage.getItem('hour09'));
     // This function gets the current hour. This function returns a number
     // that will be used to check if a task is past the due date.
     function trackHour() {
@@ -42,6 +42,15 @@ $(function() {
         return currentHour;
     }
 
+    function compareHour(hourNum) {
+        $('.time-block').each(function() {
+            var timeBlockEl = $(this);
+            
+            var timeBlockNum = parseInt(timeBlockEl[0].children[0].textContent.trim().split(':')[0]);
+            console.log(timeBlockNum)
+        });
+    }
+    compareHour(0);
     console.log(trackHour());
 });
 
