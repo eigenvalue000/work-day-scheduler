@@ -86,6 +86,8 @@ $(function() {
         });
     }
    
+    // Run the compareHour function with the trackHour function as
+    // the input.
     compareHour(trackHour());
     
 });
