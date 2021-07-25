@@ -28,6 +28,12 @@ $(function() {
         localStorage.setItem(taskTime, taskDescription);
     });
 
+    // Here, the hourXX id and textArea description class are
+    // referenced by jQuery to write the value of the
+    // item in localStorage that has the key hourXX to the hourXX
+    // description in the HTML. This results in the page always
+    // displaying the user's saved task even if the page is reloaded.
+    $('#hour08 .description').val(localStorage.getItem('hour08'));
 
 });
 
