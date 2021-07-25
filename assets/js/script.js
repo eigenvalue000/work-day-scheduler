@@ -55,13 +55,35 @@ $(function() {
             // string into a useable number for comparison.
             var timeBlockNum = parseInt(timeBlockEl[0].children[0].textContent.trim().split(':')[0]);
             
+            // Now, implement the logic of the function. 
             if (timeBlockNum < hourNum) {
+                // If the timeBlockNum is less than the current
+                // hour hourNum, then color the time block grey.
                 console.log('timeBlockNum' + timeBlockNum.toString() + '<' + 'hourNum' + hourNum.toString());
+                // Color the time block grey by adding the 'past' class
+                $(this).addClass('past');
+                // Clean up other time block colorings
+                $(this).removeClass('present');
+                $(this).removeClass('future');
                 
             } else if (timeBlockNum === hourNum) {
+                // If the timeBlockNum is equal to the current
+                // hour hourNum, then color the time block red.
                 console.log('timeBlockNum' + timeBlockNum.toString() + '=' + 'hourNum' + hourNum.toString());
+                // Color the time block red by adding the 'present' class
+                $(this).addClass('present');
+                // Clean up other time block colorings
+                $(this).removeClass('past');
+                $(this).removeClass('future');
             } else {
+                // If the timeBlockNum is greater than the current
+                // hour hourNum, then color the time block green.
                 console.log('timeBlockNum' + timeBlockNum.toString() + '>' + 'hourNum' + hourNum.toString());
+                // Color the time block green by adding the 'future' class
+                $(this).addClass('future');
+                //Clean up other time block colorings
+                $(this).removeClass('past');
+                $(this).removeClass('present');
                 
             }
         });
